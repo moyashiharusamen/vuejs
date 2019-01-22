@@ -20,3 +20,12 @@
   - JavaScript の単一な式
 - コンポーネント素敵
 - NUXT って静的サイトジェネレータなのか
+
+### SECTION 3
+- リソース
+  - https://github.com/vuejs/awesome-vue
+  - https://curated.vuejs.org/
+- UI集
+  - http://element.eleme.io/#/en-US
+  - https://ja.onsen.io/
+- 今はネットになんでもあるんだなと改めて実感
