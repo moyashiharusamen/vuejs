@@ -23,7 +23,12 @@
     <p>{{ count }}</p>
     <input v-model.number="count">
 
-    <p v-if="show">Hello Vue.js!</p>
+    <!--<p v-if="show">Hello Vue.js!</p>-->
+
+    <button v-on:click="show=!show">切り替え</button>
+    <transition>
+        <p v-if="show">Hello Vue.js</p>
+    </transition>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
