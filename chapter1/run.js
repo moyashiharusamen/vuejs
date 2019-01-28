@@ -3,7 +3,8 @@ var vm = new Vue({
     data: {
         message: 'Hello Vue!',
         count: 1,
-        list: ['りんご', 'ばなな', 'すいか']
+        list: ['りんご', 'ばなな', 'すいか'],
+        show: true
     },
     methods: {
         handClick: function (e) {
