@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app2">
+
+</div>
+
+<div id="app3">
+    <p>{{ message.value }}</p>
+    <p>{{ message.value.length }}</p>
+    <p>{{ list[2] }}</p>
+    <p>{{ list[num] }}</p>
+
+    <input type="text" v-bind:value="message.value">
+    <input type="text" :value="message.value">
+
+    <div v-bind:text-content.prop="message.value">...</div>
+    <div v-bind:scroll-top.prop="scroll">...</div>
+
+    <pre>{{ $data }}</pre>
+</div>
+
+<div id="app4">
+    <p>{{ count }}回クリックしたよ！</p>
+    <button type="button" v-on:click="increment">カウントを増やす</button>
+    <button type="button" v-on:click="decrement">カウントを減らす</button>
+</div>
+
+<div id="app5">
+    <p v-bind:class="{ child: isChild, 'is-active': isActive }">Text</p>
+    <p v-bind:style="{ color: textColor, backgroundColor: bgColor }">Text</p>
+    <p class="child" :class="{ 'is-active': isActive }">TEXT</p>
+    <p style="color:blue;" :style="{ color: textColor }">TEXT</p>
+
+    <!--<p v-bind:class="[isActive ? 'active' : 'normal', otherClass]">Text</p>-->
+
+    <p v-bind:class="classObject">Text</p>
+    <p v-bind:style="styleObject">Text</p>
+</div>
+
+<div id="app6">
+    <!--<img v-bind:src="item.src"-->
+         <!--v-bind:alt="item.alt"-->
+         <!--v-bind:width="item.width"-->
+         <!--v-bind:height="item.height">-->
+    <img v-bind="item">
+    <img v-bind="item" v-bind:id="'thumb-' + item.id">
+</div>
+
+<div id="app7">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <circle cx="100" cy="75" v-bind:r="radius" fill="tomato"></circle>
+    </svg>
+    <input type="range" min="0" max="100" v-model="radius">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+<script src="run.js"></script>
+</body>
+</html>
