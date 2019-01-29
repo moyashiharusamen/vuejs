@@ -13,19 +13,3 @@ var vm = new Vue({
         }
     }
 });
-
-var state = { count: 0 };
-
-var vm2 = new Vue({
-    el: '#app2',
-    data: {
-        message: state,
-        newTodo: '',
-        visitCount: 0,
-        hideComplateTodos: false,
-        todos: [],
-        error: null
-    }
-});
-
-state.count++;
