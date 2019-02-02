@@ -59,6 +59,52 @@
     <input type="range" min="0" max="100" v-model="radius">
 </div>
 
+<div id="app8">
+    name <input type="text" v-model="name">
+    <button type="button" @click="doAdd">モンスターを追加</button>
+    <button type="button" @click="rewrite">書き換え</button>
+    <ul>
+        <!--<li v-for="item in list" v-bind:key="item.id">-->
+            <!--ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}-->
+        <!--</li>-->
+
+        <!--<li v-for="(item, key, index) in list" v-bind:key="item.id">-->
+            <!--ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}, key.{{ key }}, index.{{ index }}-->
+        <!--</li>-->
+
+        <!--<li v-for="item in list"-->
+            <!--v-bind:key="item.id"-->
+            <!--v-bind:class="{ tuyoi: item.hp > 300 }">-->
+            <!--ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}-->
+            <!--<span v-if="item.hp > 300">つよい！</span>-->
+        <!--</li>-->
+
+        <!--<li v-for="item in list" :key="item.id" v-if="item.hp < 300">-->
+            <!--ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}-->
+        <!--</li>-->
+
+        <li v-for="(item, index) in list" :key="item.id" v-if="item.hp">
+            ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+            <button type="button" @click="doRemove(index)">モンスターを削除</button>
+            <span v-if="item.hp < 50">瀕死！</span>
+            <button type="button" @click="doAttack(index)">攻撃する</button>
+        </li>
+    </ul>
+
+    <span v-for="item in 15">{{ item }}</span>
+    <span v-for="item in [1, 5, 10, 15]">{{ item }}</span>
+
+    <span v-for="item in text">{{ item }}</span>
+</div>
+
+<!--<div id="app9">-->
+    <!--<ul>-->
+        <!--<li v-for="(item, index) in list" @key="item.id">-->
+            <!--ID.{{ item.id }} {{ item.bane }} HP.{{ item.hp }}-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
 <script src="run.js"></script>
 </body>
