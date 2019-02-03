@@ -7,7 +7,19 @@
 </head>
 <body>
 
+<div id="app"></div>
 
+
+<div id="app2">
+    <p ref="hello">Hello</p>
+</div>
+
+
+<div id="app3">
+    <button type="button" @click="handleClick">カウントアップ</button>
+    <button type="button" @click="show=!show">表示 / 非表示</button>
+    <span ref="count" v-if="show">0</span>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
 <script src="run.js"></script>
