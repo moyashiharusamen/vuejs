@@ -7,7 +7,60 @@
 </head>
 <body>
 
+<a v-bind:href="url" v-pre>
+    Hello {{ message }}
+</a>
 
+
+<div id="app">
+    <a v-bind:href="url" v-once>
+        Hello {{ message }}
+    </a>
+
+    <span v-text="message"></span>
+</div>
+
+
+<div id="app2">
+    <span v-html="message"></span>
+</div>
+
+<div id="app3" v-cloak>
+    {{ message }}
+</div>
+
+<style>
+    [v-cloak] {
+        display: none;
+    }
+    #app3 {
+        animation: cloak-in 1s;
+    }
+    #app3[v-cloak] {
+        opacity: 0;
+    }
+
+    @keyframes cloak-in {
+        0% { opacity: 0; }
+    }
+</style>
+
+
+<div id="app4">
+    <!--<div v-if="toggle">-->
+        <!--A <input type="text">-->
+    <!--</div>-->
+    <!--<div v-else="toggle">-->
+        <!--B <input type="text">-->
+    <!--</div>-->
+
+    <div v-if="toggle">
+        A <input type="text" key="a">
+    </div>
+    <div v-else="toggle">
+        B <input type="text" key="b">
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
 <script src="run.js"></script>
